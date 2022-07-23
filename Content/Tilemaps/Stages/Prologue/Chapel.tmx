@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="30" height="26" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="48">
+ <tileset firstgid="1" source="../../Floor.tsx"/>
+ <tileset firstgid="129" source="Sprites.tsx"/>
+ <layer id="1" name="Floor" width="30" height="26">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+28,28,28,28,28,28,28,28,28,28,28,28,28,28,12,12,28,28,28,28,7,7,7,7,7,7,7,7,7,7,
+28,11,12,12,12,12,28,12,12,12,12,12,12,12,28,28,12,12,12,13,7,7,7,7,7,7,7,7,7,7,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,28,7,7,7,7,7,7,7,7,7,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,28,7,7,7,7,7,7,7,7,7,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,28,7,7,7,7,7,7,7,7,7,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,28,28,28,28,28,28,28,28,28,28,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,117,85,85,85,85,85,85,85,28,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,117,85,85,85,85,85,85,85,28,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,117,85,85,85,85,85,85,85,28,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,117,85,85,85,85,85,85,85,28,
+53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,84,101,85,85,85,85,85,85,85,28,
+53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,100,101,85,85,85,85,85,85,85,28,
+53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,100,101,85,85,85,85,85,85,85,28,
+53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,116,101,85,85,85,85,85,85,85,28,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,117,85,85,85,85,85,85,85,28,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,117,85,85,85,85,85,85,85,28,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,117,85,85,85,85,85,85,85,28,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,117,101,101,101,101,101,101,101,28,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,28,28,28,28,28,28,28,28,28,28,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,28,7,7,7,7,7,7,7,7,7,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,28,7,7,7,7,7,7,7,7,7,
+28,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,28,7,7,7,7,7,7,7,7,7,
+28,43,44,44,44,44,44,44,44,44,44,44,44,44,28,28,44,44,44,45,28,7,7,7,7,7,7,7,7,7,
+28,28,28,28,28,28,28,28,28,28,28,28,28,28,44,44,28,28,28,28,28,7,7,7,7,7,7,7,7,7,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="2" name="Walls" width="30" height="26">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,50,0,0,49,0,0,0,0,0,0,0,0,0,0,0,0,0,
+50,21,21,21,21,21,21,21,21,21,21,21,21,76,0,0,75,21,21,21,49,0,0,0,0,0,0,0,0,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,0,0,0,0,0,0,0,0,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,0,0,0,0,0,0,0,0,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,0,0,0,0,0,0,0,0,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,0,0,0,0,0,0,0,0,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,75,21,21,21,21,21,21,21,21,49,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,0,0,0,0,0,0,34,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,116,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,59,33,33,33,33,33,33,33,33,36,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,0,0,0,0,0,0,0,0,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,0,0,0,0,0,0,0,0,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,0,0,0,0,0,0,0,0,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,0,0,0,0,0,0,0,0,0,
+37,33,33,33,33,33,33,33,33,33,33,33,33,60,0,0,59,33,33,33,36,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,37,0,0,36,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="3" name="Objects">
+  <object id="3" template="../../Object.tx" name="Bench" gid="135" x="32" y="138" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="4" template="../../Object.tx" name="Bench" gid="135" x="64" y="138" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="5" template="../../Object.tx" name="Bench" gid="135" x="32" y="90" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="6" template="../../Object.tx" name="Bench" gid="135" x="64" y="90" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7" template="../../Object.tx" name="Bench" gid="135" x="96" y="90" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="8" template="../../Object.tx" name="Bench" gid="135" x="96" y="138" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="9" template="../../Object.tx" name="Bench" gid="135" x="130" y="138" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="10" template="../../Object.tx" name="Bench" gid="135" x="162" y="138" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="11" template="../../Object.tx" name="Bench" gid="135" x="130" y="90" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="12" template="../../Object.tx" name="Bench" gid="135" x="162" y="90" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="13" template="../../Object.tx" name="Bench" gid="135" x="194" y="90" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="14" template="../../Object.tx" name="Bench" gid="135" x="194" y="138" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="15" template="../../Object.tx" name="Bench" gid="135" x="32" y="326" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="16" template="../../Object.tx" name="Bench" gid="135" x="64" y="326" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="17" template="../../Object.tx" name="Bench" gid="135" x="32" y="278" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="18" template="../../Object.tx" name="Bench" gid="135" x="64" y="278" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="19" template="../../Object.tx" name="Bench" gid="135" x="96" y="278" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="20" template="../../Object.tx" name="Bench" gid="135" x="96" y="326" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="21" template="../../Object.tx" name="Bench" gid="135" x="130" y="326" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="22" template="../../Object.tx" name="Bench" gid="135" x="162" y="326" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="23" template="../../Object.tx" name="Bench" gid="135" x="130" y="278" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="24" template="../../Object.tx" name="Bench" gid="135" x="162" y="278" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="25" template="../../Object.tx" name="Bench" gid="135" x="194" y="278" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="26" template="../../Object.tx" name="Bench" gid="135" x="194" y="326" width="14" height="46">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="28" template="../../Object.tx" gid="144" x="240" y="-19.5" width="34" height="71">
+   <properties>
+    <property name="Depth" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="29" template="../../Object.tx" gid="144" x="240" y="435.5" width="34" height="71" rotation="180">
+   <properties>
+    <property name="Depth" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="30" template="../../Object.tx" gid="134" x="170" y="-2.5" width="20" height="35">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="BreakableWindow"/>
+   </properties>
+  </object>
+  <object id="31" template="../../Object.tx" gid="134" x="138" y="-2.5" width="20" height="35">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="BreakableWindow"/>
+   </properties>
+  </object>
+  <object id="32" template="../../Object.tx" gid="134" x="106" y="-2.5" width="20" height="35">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="BreakableWindow"/>
+   </properties>
+  </object>
+  <object id="36" template="../../Object.tx" gid="134" x="106" y="418.5" width="20" height="35" rotation="180">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="BreakableWindow"/>
+   </properties>
+  </object>
+  <object id="37" template="../../Object.tx" gid="134" x="137.992" y="418.5" width="20" height="35" rotation="180">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="BreakableWindow"/>
+   </properties>
+  </object>
+  <object id="38" template="../../Object.tx" gid="134" x="169.985" y="418.5" width="20" height="35" rotation="180">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="BreakableWindow"/>
+   </properties>
+  </object>
+  <object id="42" template="../../Object.tx" gid="134" x="500" y="184" width="20" height="35" rotation="90">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="BreakableWindow"/>
+   </properties>
+  </object>
+  <object id="43" template="../../Object.tx" gid="134" x="510" y="208" width="20" height="35" rotation="90">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="BreakableWindow"/>
+   </properties>
+  </object>
+  <object id="44" template="../../Object.tx" gid="134" x="500" y="233" width="20" height="35" rotation="90">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="BreakableWindow"/>
+   </properties>
+  </object>
+  <object id="46" template="../../Object.tx" name="Lectern" gid="138" x="376.5" y="191" width="21" height="44">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="ColliderHeightP" type="float" value="50"/>
+    <property name="ColliderOffsetY" type="float" value="11"/>
+    <property name="ColliderWidthP" type="float" value="100"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="LecternStrategy"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="Transitions">
+  <object id="1" name="T_Yard" x="0" y="176" width="16" height="64">
+   <properties>
+    <property name="Solid" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="27" name="S_Yard" x="48" y="208">
+   <point/>
+  </object>
+  <object id="39" template="../../SceneTransition.tx" name="T_BellTower" x="224" y="0" width="32" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="41" template="../../SceneTransition.tx" name="T_InnerYard" x="224" y="400" width="32" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

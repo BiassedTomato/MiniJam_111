@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fabs/Colorful.tres" type="Material" id=1]
+[ext_resource path="res://Fabs/Tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Fabs/ColorfulTileMap.cs" type="Script" id=3]
+
+[node name="ColorfulTileMap" type="TileMap"]
+material = ExtResource( 1 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+script = ExtResource( 3 )

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="7">
+ <tileset firstgid="1" source="../../Floor.tsx"/>
+ <tileset firstgid="129" source="Sprites.tsx"/>
+ <layer id="1" name="Floor" width="16" height="16">
+  <data encoding="csv">
+28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,6,
+28,61,61,61,61,61,61,61,61,61,61,61,61,61,28,6,
+28,61,28,28,28,28,28,28,28,28,28,28,28,61,28,6,
+28,61,28,28,28,28,28,28,28,28,28,28,28,61,28,6,
+28,61,28,28,28,28,28,28,28,28,28,28,28,61,28,6,
+28,61,28,28,28,28,28,28,28,28,28,28,28,28,61,6,
+28,61,28,28,28,61,61,61,28,28,28,28,28,28,61,6,
+28,61,28,28,28,61,28,61,28,28,28,28,28,28,61,6,
+28,61,28,28,28,61,61,61,28,28,28,28,28,28,61,6,
+28,61,28,28,28,28,28,28,28,28,28,28,28,28,61,6,
+28,61,28,28,28,28,28,28,28,28,28,28,28,28,61,6,
+28,61,28,28,28,28,28,28,28,28,28,28,28,61,28,6,
+28,61,28,28,28,28,28,28,28,28,28,28,28,61,28,6,
+28,61,28,28,28,28,28,28,28,28,28,28,28,61,28,6,
+28,61,61,61,61,61,61,61,61,61,61,61,61,61,28,6,
+28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,6
+</data>
+ </layer>
+ <layer id="2" name="Walls" width="16" height="16">
+  <data encoding="csv">
+50,21,21,21,21,21,21,21,21,21,21,21,21,21,49,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,34,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,34,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,34,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,75,49,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,59,36,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,34,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,34,0,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,34,0,
+37,33,33,33,33,33,33,33,33,33,33,33,33,33,36,0
+</data>
+ </layer>
+ <objectgroup id="7" name="Objects">
+  <object id="2" template="../../Object.tx" gid="131" x="265" y="128" width="96" height="50" rotation="90">
+   <properties>
+    <property name="AutoCollider" type="bool" value="false"/>
+    <property name="Solid" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="5" template="../../Object.tx" name="Grate" gid="143" x="104" y="120" width="34" height="34">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="Grate"/>
+    <property name="RenderLayer" type="int" value="11"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="8" name="Transitions">
+  <object id="3" name="T_Cemetery" x="224" y="80" width="16" height="96"/>
+  <object id="4" name="S_Cemetery" x="208" y="128">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

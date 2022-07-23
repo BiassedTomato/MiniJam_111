@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="24" height="19" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="28">
+ <tileset firstgid="1" source="../../Floor.tsx"/>
+ <tileset firstgid="129" source="Sprites.tsx"/>
+ <layer id="2" name="Floor" width="24" height="19">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="1" name="Walls" width="24" height="19">
+  <data encoding="csv">
+50,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,49,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,
+37,33,33,33,33,33,33,33,60,0,0,0,0,0,0,59,33,33,33,33,33,33,33,36,
+0,0,0,0,0,0,0,0,37,0,0,0,0,0,0,36,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="3" name="Objects">
+  <object id="3" gid="131" x="192" y="313" width="96" height="50" rotation="180"/>
+  <object id="8" template="../../Object.tx" name="Gravestone" gid="139" x="240" y="51" width="25" height="28">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="ColliderHeightP" type="float" value="50"/>
+    <property name="ColliderOffsetY" type="float" value="7"/>
+    <property name="ColliderWidthP" type="float" value="100"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="Tombstone"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="13" template="../../Object.tx" name="Burial Mound" gid="140" x="241" y="84" width="25" height="36">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="false"/>
+    <property name="Interaction" value="BurialMound"/>
+    <property name="RenderLayer" type="int" value="11"/>
+    <property name="Solid" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="14" template="../../Object.tx" name="Gravestone" gid="139" x="192" y="51" width="25" height="28">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="ColliderHeightP" type="float" value="50"/>
+    <property name="ColliderOffsetY" type="float" value="7"/>
+    <property name="ColliderWidthP" type="float" value="100"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="Tombstone"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="15" template="../../Object.tx" name="Burial Mound" gid="140" x="193" y="84" width="25" height="36">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="false"/>
+    <property name="Interaction" value="BurialMound"/>
+    <property name="RenderLayer" type="int" value="11"/>
+    <property name="Solid" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="16" template="../../Object.tx" name="Gravestone" gid="139" x="142" y="51" width="25" height="28">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="ColliderHeightP" type="float" value="50"/>
+    <property name="ColliderOffsetY" type="float" value="7"/>
+    <property name="ColliderWidthP" type="float" value="100"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="Tombstone"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="17" template="../../Object.tx" name="Burial Mound" gid="140" x="143" y="84" width="25" height="36">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="false"/>
+    <property name="Interaction" value="BurialMound"/>
+    <property name="RenderLayer" type="int" value="11"/>
+    <property name="Solid" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="18" template="../../Object.tx" name="Gravestone" gid="139" x="94" y="51" width="25" height="28">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="ColliderHeightP" type="float" value="50"/>
+    <property name="ColliderOffsetY" type="float" value="7"/>
+    <property name="ColliderWidthP" type="float" value="100"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="Tombstone"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="19" template="../../Object.tx" name="Burial Mound" gid="140" x="95" y="84" width="25" height="36">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="false"/>
+    <property name="Interaction" value="BurialMound"/>
+    <property name="RenderLayer" type="int" value="11"/>
+    <property name="Solid" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="22" template="../../Object.tx" name="Gravestone" gid="139" x="288" y="51" width="25" height="28">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="ColliderHeightP" type="float" value="50"/>
+    <property name="ColliderOffsetY" type="float" value="7"/>
+    <property name="ColliderWidthP" type="float" value="100"/>
+    <property name="Depth" type="bool" value="true"/>
+    <property name="Interaction" value="Tombstone"/>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="23" template="../../Object.tx" name="Burial Mound" gid="140" x="289" y="84" width="25" height="36">
+   <properties>
+    <property name="AutoCollider" type="bool" value="true"/>
+    <property name="Depth" type="bool" value="false"/>
+    <property name="Interaction" value="BurialMound"/>
+    <property name="RenderLayer" type="int" value="11"/>
+    <property name="Solid" type="bool" value="false"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="Transitions">
+  <object id="1" name="T_Nest" x="144" y="288" width="96" height="16"/>
+  <object id="2" name="S_Nest" x="192" y="240">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

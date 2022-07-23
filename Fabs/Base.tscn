@@ -1,0 +1,360 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://crt_shader.tres" type="Shader" id=1]
+[ext_resource path="res://ColorManager.cs" type="Script" id=2]
+[ext_resource path="res://Fabs/Tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://Fabs/Character.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Clicker.tres" type="Shader" id=5]
+[ext_resource path="res://Fabs/ColorfulTileMap.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Content/Fonts/bmp8x8.fnt" type="BitmapFont" id=8]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/screen_size = Vector2( 320, 180 )
+shader_param/show_curvature = true
+shader_param/curvature_x_amount = 4.0
+shader_param/curvature_y_amount = 4.0
+shader_param/corner_color = Color( 0, 0, 0, 1 )
+shader_param/line_color = Color( 0, 0, 0, 1 )
+shader_param/show_vignette = true
+shader_param/vignette_opacity = 0.2
+shader_param/show_horizontal_scan_lines = true
+shader_param/horizontal_scan_lines_amount = 180.0
+shader_param/horizontal_scan_lines_opacity = 0.51
+shader_param/show_vertical_scan_lines = false
+shader_param/vertical_scan_lines_amount = 320.0
+shader_param/vertical_scan_lines_opacity = 1.0
+shader_param/boost = 1.2
+shader_param/aberration_amount = 0.0
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 5 )
+shader_param/red = true
+shader_param/green = true
+shader_param/blue = true
+shader_param/alpha = null
+
+[sub_resource type="Shader" id=4]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform bool red;
+uniform bool green;
+uniform bool blue;
+
+uniform bool alpha;
+
+void fragment()
+{
+	float rv=0f;
+	float gv=0f;
+	float bv=0f;
+	
+	float av=0f;
+	
+	if(!red)
+		rv=0.85f;
+	if(!green)
+		gv=0.85f;
+	if(!blue)
+		bv=0.85f;
+		
+	if(!alpha)
+		av=0.85f;
+		
+		vec4 pix=texture(TEXTURE,UV);
+		
+	if(!green&&!red&&!blue)
+	{
+		COLOR=vec4(0f,0f,0f,0f);
+	}
+	else
+		COLOR=vec4(max(pix.r-rv,0.15f),max(pix.g-gv,0.15f),max(pix.b-bv,0.15f),pix.a);
+	
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=5]
+resource_local_to_scene = true
+shader = SubResource( 4 )
+shader_param/red = true
+shader_param/green = false
+shader_param/blue = false
+shader_param/alpha = false
+
+[sub_resource type="Shader" id=6]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform bool red;
+uniform bool green;
+uniform bool blue;
+
+uniform bool alpha;
+
+void fragment()
+{
+	float rv=0f;
+	float gv=0f;
+	float bv=0f;
+	
+	float av=0f;
+	
+	if(!red)
+		rv=0.85f;
+	if(!green)
+		gv=0.85f;
+	if(!blue)
+		bv=0.85f;
+		
+	if(!alpha)
+		av=0.85f;
+		
+		vec4 pix=texture(TEXTURE,UV);
+		
+	if(!green&&!red&&!blue)
+	{
+		COLOR=vec4(0f,0f,0f,0f);
+	}
+	else
+		COLOR=vec4(max(pix.r-rv,0.15f),max(pix.g-gv,0.15f),max(pix.b-bv,0.15f),pix.a);
+	
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=7]
+resource_local_to_scene = true
+shader = SubResource( 6 )
+shader_param/red = true
+shader_param/green = false
+shader_param/blue = false
+shader_param/alpha = false
+
+[sub_resource type="Shader" id=8]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform bool red;
+uniform bool green;
+uniform bool blue;
+
+uniform bool alpha;
+
+void fragment()
+{
+	float rv=0f;
+	float gv=0f;
+	float bv=0f;
+	
+	float av=0f;
+	
+	if(!red)
+		rv=0.85f;
+	if(!green)
+		gv=0.85f;
+	if(!blue)
+		bv=0.85f;
+		
+	if(!alpha)
+		av=0.85f;
+		
+		vec4 pix=texture(TEXTURE,UV);
+		
+	if(!green&&!red&&!blue)
+	{
+		COLOR=vec4(0f,0f,0f,0f);
+	}
+	else
+		COLOR=vec4(max(pix.r-rv,0.15f),max(pix.g-gv,0.15f),max(pix.b-bv,0.15f),pix.a);
+	
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=9]
+resource_local_to_scene = true
+shader = SubResource( 8 )
+shader_param/red = false
+shader_param/green = true
+shader_param/blue = false
+shader_param/alpha = false
+
+[sub_resource type="Shader" id=10]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform bool red;
+uniform bool green;
+uniform bool blue;
+
+uniform bool alpha;
+
+void fragment()
+{
+	float rv=0f;
+	float gv=0f;
+	float bv=0f;
+	
+	float av=0f;
+	
+	if(!red)
+		rv=0.85f;
+	if(!green)
+		gv=0.85f;
+	if(!blue)
+		bv=0.85f;
+		
+	if(!alpha)
+		av=0.85f;
+		
+		vec4 pix=texture(TEXTURE,UV);
+		
+	if(!green&&!red&&!blue)
+	{
+		COLOR=vec4(0f,0f,0f,0f);
+	}
+	else
+		COLOR=vec4(max(pix.r-rv,0.15f),max(pix.g-gv,0.15f),max(pix.b-bv,0.15f),pix.a);
+	
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=11]
+resource_local_to_scene = true
+shader = SubResource( 10 )
+shader_param/red = false
+shader_param/green = true
+shader_param/blue = false
+shader_param/alpha = false
+
+[sub_resource type="Shader" id=12]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform bool red;
+uniform bool green;
+uniform bool blue;
+
+uniform bool alpha;
+
+void fragment()
+{
+	float rv=0f;
+	float gv=0f;
+	float bv=0f;
+	
+	float av=0f;
+	
+	if(!red)
+		rv=0.85f;
+	if(!green)
+		gv=0.85f;
+	if(!blue)
+		bv=0.85f;
+		
+	if(!alpha)
+		av=0.85f;
+		
+		vec4 pix=texture(TEXTURE,UV);
+		
+	if(!green&&!red&&!blue)
+	{
+		COLOR=vec4(0f,0f,0f,0f);
+	}
+	else
+		COLOR=vec4(max(pix.r-rv,0.15f),max(pix.g-gv,0.15f),max(pix.b-bv,0.15f),pix.a);
+	
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=13]
+resource_local_to_scene = true
+shader = SubResource( 12 )
+shader_param/red = false
+shader_param/green = false
+shader_param/blue = true
+shader_param/alpha = false
+
+[sub_resource type="ShaderMaterial" id=15]
+resource_local_to_scene = true
+shader = ExtResource( 5 )
+shader_param/red = false
+shader_param/green = false
+shader_param/blue = true
+shader_param/alpha = false
+
+[node name="Base" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -79.0
+margin_top = -13.0
+margin_right = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 8 )
+text = "%LEVELNAME%"
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -110.0
+margin_top = 30.0
+margin_right = 25.0
+margin_bottom = 73.0
+
+[node name="Bounds" type="TileMap" parent="."]
+material = SubResource( 3 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 28
+collision_mask = 28
+format = 1
+
+[node name="Character" parent="." instance=ExtResource( 4 )]
+position = Vector2( 88, 128 )
+
+[node name="RemoteTransform2D" parent="Character" index="2"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 88, 128 )
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+
+[node name="RedWalls" parent="." groups=["Red"] instance=ExtResource( 6 )]
+material = SubResource( 5 )
+
+[node name="RedPaths" parent="." groups=["Red"] instance=ExtResource( 6 )]
+material = SubResource( 7 )
+Walkable = true
+
+[node name="GreenWalls" parent="." groups=["Green"] instance=ExtResource( 6 )]
+material = SubResource( 9 )
+
+[node name="GreenPaths" parent="." groups=["Green"] instance=ExtResource( 6 )]
+material = SubResource( 11 )
+Walkable = true
+
+[node name="BlueWalls" parent="." groups=["Blue"] instance=ExtResource( 6 )]
+material = SubResource( 13 )
+
+[node name="BluePaths" parent="." groups=["Blue"] instance=ExtResource( 6 )]
+material = SubResource( 15 )
+Walkable = true
+
+[editable path="Character"]
