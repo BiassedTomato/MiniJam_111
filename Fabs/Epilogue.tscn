@@ -1,0 +1,127 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Fabs/Epilogue.cs" type="Script" id=1]
+[ext_resource path="res://crt_shader.tres" type="Shader" id=2]
+[ext_resource path="res://white8x8.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://Mashable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Content/Fonts/bmp8x8.fnt" type="BitmapFont" id=5]
+[ext_resource path="res://Content/RadioNoise.gdshader" type="Shader" id=6]
+[ext_resource path="res://Fabs/Enemy.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Type"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Spacebar2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/screen_size = Vector2( 320, 180 )
+shader_param/show_curvature = true
+shader_param/curvature_x_amount = 4.0
+shader_param/curvature_y_amount = 4.0
+shader_param/corner_color = Color( 0, 0, 0, 1 )
+shader_param/line_color = Color( 0, 0, 0, 1 )
+shader_param/show_vignette = true
+shader_param/vignette_opacity = 0.2
+shader_param/show_horizontal_scan_lines = true
+shader_param/horizontal_scan_lines_amount = 180.0
+shader_param/horizontal_scan_lines_opacity = 0.51
+shader_param/show_vertical_scan_lines = false
+shader_param/vertical_scan_lines_amount = 320.0
+shader_param/vertical_scan_lines_opacity = 1.0
+shader_param/boost = 1.2
+shader_param/aberration_amount = 0.0
+
+[sub_resource type="ShaderMaterial" id=3]
+resource_local_to_scene = true
+shader = ExtResource( 6 )
+shader_param/color = Plane( 1, 1, 1, 1 )
+
+[node name="Base" type="Node2D"]
+script = ExtResource( 1 )
+NextScene = "res://Fabs/Credits.tscn"
+AnimPlayer = NodePath("CanvasLayer/RichTextLabel/AnimationPlayer")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -147.5
+margin_top = -44.5
+margin_right = 147.5
+margin_bottom = 44.5
+custom_fonts/normal_font = ExtResource( 3 )
+visible_characters = 0
+percent_visible = 0.0
+text = "And just like that, the brave, yet gullible anon got consumed by the demons he himself had unleashed."
+
+[node name="Timer" type="Timer" parent="CanvasLayer/RichTextLabel"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/RichTextLabel"]
+anims/Type = SubResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="Spacebar2" parent="." instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 320, 241 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Spacebar2"]
+margin_left = -21.0
+margin_top = 18.0
+margin_right = 31.0
+margin_bottom = 37.0
+custom_fonts/normal_font = ExtResource( 5 )
+text = "FINISH"
+
+[node name="Enemy" parent="." instance=ExtResource( 7 )]
+position = Vector2( 229, 295 )
+
+[node name="Sprite" parent="Enemy" index="0"]
+material = SubResource( 3 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 312, 295 )
+
+[node name="Sprite" parent="Enemy2" index="0"]
+material = SubResource( 3 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 398, 295 )
+
+[node name="Sprite" parent="Enemy3" index="0"]
+material = SubResource( 3 )
+
+[editable path="Enemy"]
+[editable path="Enemy2"]
+[editable path="Enemy3"]

@@ -94,7 +94,10 @@ public class Eye : KinematicBody2D
             if ((k.CollisionLayer & (uint)bit) >= (int)Color)
             {
                 if (Open)
+                {
                     GetNode<Particles2D>("Particles2D").Emitting = true;
+                    GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
+                }
 
                 Toggle();
 

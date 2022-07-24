@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Fabs/ColorfulTileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ColorManager.cs" type="Script" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://Fabs/ColorListener.tscn" type="PackedScene" id=13]
 [ext_resource path="res://white8x8.fnt" type="BitmapFont" id=14]
 [ext_resource path="res://Fabs/Speaker.cs" type="Script" id=15]
+[ext_resource path="res://Fabs/AnimationTrigger.cs" type="Script" id=16]
+
+[sub_resource type="StyleBoxFlat" id=35]
+bg_color = Color( 0.14902, 0.14902, 0.14902, 1 )
 
 [sub_resource type="Animation" id=31]
 resource_name = "TrollgeSpeak"
@@ -32,7 +36,7 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:visible")
+tracks/1/path = NodePath("..:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -44,12 +48,24 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../../Noised:visible")
+tracks/2/path = NodePath("../TrollgeGreet:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../../../Noised:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0, 5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
@@ -493,6 +509,37 @@ shader_param/alpha = null
 resource_local_to_scene = true
 extents = Vector2( 8.5, 16 )
 
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 10, 23.5 )
+
+[sub_resource type="Animation" id=34]
+resource_name = "DemonGreet"
+length = 7.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../CanvasLayer/PanelContainer/TrollgeGreet:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CanvasLayer/PanelContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 7.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
 [node name="Base" type="Node2D"]
 script = ExtResource( 2 )
 DefaultRedEnabled = true
@@ -512,16 +559,34 @@ margin_right = 80.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/normal_font = ExtResource( 8 )
-text = "OH, MERCIFUL CAGE"
+text = "BEELZEBUL'S CAGE"
 
-[node name="TrollgeSpeak" type="RichTextLabel" parent="CanvasLayer"]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+visible = false
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -181.0
-margin_top = -70.0
-margin_right = 181.0
+anchor_bottom = 0.5
+margin_left = -118.0
+margin_top = 55.0
+margin_right = 118.0
+margin_bottom = 129.0
+custom_styles/panel = SubResource( 35 )
+
+[node name="TrollgeGreet" type="RichTextLabel" parent="CanvasLayer/PanelContainer"]
+margin_right = 236.0
+margin_bottom = 74.0
+custom_fonts/normal_font = ExtResource( 14 )
+visible_characters = 0
+percent_visible = 0.0
+text = "HEY PAL
+I'M IN A QUITE A PREDICAMENT HERE
+MIND LENDING ME A HELPING HAND?
+THESE WALLS ARE NOT VERY... FUN"
+
+[node name="TrollgeSpeak" type="RichTextLabel" parent="CanvasLayer/PanelContainer"]
+margin_right = 236.0
+margin_bottom = 74.0
 custom_fonts/normal_font = ExtResource( 14 )
 visible_characters = 0
 percent_visible = 0.0
@@ -530,7 +595,7 @@ text = "THANK YOU FOR LETTING ME OUT. ENJOY YOUR DELICIOUS, DELICIOUS MUSHROOMS
 script = ExtResource( 15 )
 AnimationName = "TrollgeSpeak"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/TrollgeSpeak"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/PanelContainer/TrollgeSpeak"]
 anims/TrollgeSpeak = SubResource( 31 )
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
@@ -652,7 +717,20 @@ shape = SubResource( 30 )
 [node name="ColorListener" parent="." instance=ExtResource( 13 )]
 NeedsRed = true
 
-[connection signal="ColorStateSet" from="ColorListener" to="CanvasLayer/TrollgeSpeak" method="Speak"]
+[node name="AnimationTrigger" type="Area2D" parent="."]
+position = Vector2( -13, 51 )
+script = ExtResource( 16 )
+Animation = "DemonGreet"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationTrigger"]
+position = Vector2( 0, 13.5 )
+shape = SubResource( 33 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTrigger"]
+anims/DemonGreet = SubResource( 34 )
+
+[connection signal="ColorStateSet" from="ColorListener" to="CanvasLayer/PanelContainer/TrollgeSpeak" method="Speak"]
+[connection signal="body_entered" from="AnimationTrigger" to="AnimationTrigger" method="OnBodyEntered"]
 
 [editable path="Character"]
 [editable path="Noised"]

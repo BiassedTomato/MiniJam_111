@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ambient.wav-eca488d2d276682daaf367af131b8676.sample"
+
+[deps]
+
+source_file="res://SFX/ambient.wav"
+dest_files=[ "res://.import/ambient.wav-eca488d2d276682daaf367af131b8676.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

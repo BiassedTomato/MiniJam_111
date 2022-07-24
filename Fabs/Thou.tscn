@@ -7,7 +7,7 @@
 [ext_resource path="res://Fabs/Eye.tscn" type="PackedScene" id=5]
 [ext_resource path="res://SceneChangeTrigger.tscn" type="PackedScene" id=6]
 
-[sub_resource type="ShaderMaterial" id=1]
+[sub_resource type="ShaderMaterial" id=29]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/red = false
@@ -302,7 +302,7 @@ shader_param/green = false
 shader_param/blue = true
 shader_param/alpha = false
 
-[sub_resource type="Shader" id=14]
+[sub_resource type="Shader" id=30]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -334,12 +334,12 @@ void fragment()
 	COLOR=final;
 }"
 
-[sub_resource type="ShaderMaterial" id=15]
+[sub_resource type="ShaderMaterial" id=31]
 resource_local_to_scene = true
-shader = SubResource( 14 )
+shader = SubResource( 30 )
 shader_param/red = true
-shader_param/green = false
-shader_param/blue = false
+shader_param/green = true
+shader_param/blue = true
 
 [sub_resource type="Shader" id=16]
 resource_local_to_scene = true
@@ -716,8 +716,8 @@ tile_data = PoolIntArray( -65550, 5, 65536, -65549, 5, 65537, -65548, 5, 65537, 
 [node name="Character" parent="." index="2"]
 position = Vector2( 88, 117 )
 
-[node name="Sprite" parent="Character" index="0"]
-material = SubResource( 1 )
+[node name="AnimatedSprite" parent="Character" index="2"]
+material = SubResource( 29 )
 
 [node name="Camera2D" parent="." index="3"]
 position = Vector2( 88, 117 )
@@ -748,8 +748,8 @@ position = Vector2( -45, 16 )
 collision_layer = 49
 collision_mask = 49
 
-[node name="Sprite" parent="Doppel" index="0"]
-material = SubResource( 15 )
+[node name="AnimatedSprite" parent="Doppel" index="1"]
+material = SubResource( 31 )
 
 [node name="Shroom" parent="." index="11" instance=ExtResource( 4 )]
 material = SubResource( 17 )
@@ -790,6 +790,7 @@ Red = true
 
 [node name="SceneChangeTrigger" parent="." index="19" instance=ExtResource( 6 )]
 position = Vector2( 136, 64 )
+ScenePath = "res://Fabs/Doorstuck.tscn"
 
 [node name="CollisionShape2D" parent="SceneChangeTrigger" index="0"]
 position = Vector2( 0.5, 8 )

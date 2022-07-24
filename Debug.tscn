@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Content/DebugPalette.png" type="Texture" id=1]
 [ext_resource path="res://ColorManager.cs" type="Script" id=2]
@@ -6,12 +6,13 @@
 [ext_resource path="res://Content/Tilemaps/Tileset.png" type="Texture" id=4]
 [ext_resource path="res://crt_shader.tres" type="Shader" id=5]
 [ext_resource path="res://Noised.png" type="Texture" id=6]
-[ext_resource path="res://Content/Fonts/bmp8x8.fnt" type="BitmapFont" id=7]
+[ext_resource path="res://white8x8.fnt" type="BitmapFont" id=7]
 [ext_resource path="res://Clicker.tres" type="Shader" id=8]
 [ext_resource path="res://Eye.png" type="Texture" id=9]
 [ext_resource path="res://Wave.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Debug.cs" type="Script" id=11]
 [ext_resource path="res://Fabs/Colorful.tres" type="Material" id=12]
+[ext_resource path="res://m.jpg" type="Texture" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -228,7 +229,7 @@ margin_top = 334.0
 margin_right = 529.0
 margin_bottom = 353.0
 custom_fonts/normal_font = ExtResource( 7 )
-text = "WHAT ARE YOU DOING HERE? SHOULD NOT YOU BE PLAYING THE GAME?"
+text = "WHAT ARE YOU DOING IN THIS DEBUG ROOM? SHOULD NOT YOU BE PLAYING THE GAME?"
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource( 1 )
@@ -303,6 +304,11 @@ position = Vector2( 571, 64 )
 
 [node name="Sprite" parent="Enemy2" index="0"]
 material = SubResource( 16 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 558, 214 )
+scale = Vector2( 0.263547, 0.263547 )
+texture = ExtResource( 13 )
 
 [connection signal="toggled" from="CanvasLayer/VBoxContainer/Red" to="ColorManager" method="ColorStateChanged" binds= [ 3 ]]
 [connection signal="toggled" from="CanvasLayer/VBoxContainer/Green" to="ColorManager" method="ColorStateChanged" binds= [ 4 ]]

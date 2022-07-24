@@ -6,7 +6,7 @@
 [ext_resource path="res://Fabs/Eye.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Fabs/Character.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Fabs/Tileset.tres" type="TileSet" id=6]
-[ext_resource path="res://Content/Fonts/bmp8x8.fnt" type="BitmapFont" id=7]
+[ext_resource path="res://white8x8.fnt" type="BitmapFont" id=7]
 [ext_resource path="res://Clicker.tres" type="Shader" id=8]
 [ext_resource path="res://crt_shader.tres" type="Shader" id=9]
 [ext_resource path="res://SceneChangeTrigger.tscn" type="PackedScene" id=12]
@@ -543,7 +543,6 @@ custom_fonts/normal_font = ExtResource( 7 )
 text = "WHERE'S THE BRIDGE?"
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
 material = SubResource( 16 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -568,11 +567,11 @@ tile_data = PoolIntArray( -1835011, 5, 65536, -1835010, 5, 65537, -1835009, 5, 6
 position = Vector2( 143, 331 )
 z_index = 1
 
-[node name="Sprite" parent="Character" index="0"]
-material = SubResource( 38 )
-
-[node name="RemoteTransform2D" parent="Character" index="2"]
+[node name="RemoteTransform2D" parent="Character" index="1"]
 remote_path = NodePath("../../Camera2D")
+
+[node name="AnimatedSprite" parent="Character" index="2"]
+material = SubResource( 38 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 143, 331 )

@@ -536,6 +536,9 @@ DefaultRedEnabled = true
 DefaultGreenEnabled = true
 DefaultBlueEnabled = true
 
+[node name="RichTextLabel" parent="CanvasLayer" index="0"]
+text = "ABADDON"
+
 [node name="TrollgeSpeak" type="RichTextLabel" parent="CanvasLayer" index="1"]
 margin_left = 135.0
 margin_top = 105.0

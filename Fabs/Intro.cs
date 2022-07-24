@@ -42,5 +42,10 @@ public class Intro : Node2D
         {
             OS.WindowFullscreen = !OS.WindowFullscreen;
         }
+
+        if(Input.IsActionJustPressed("secret"))
+        {
+            GetTree().ChangeScene("res://Debug.tscn");
+        }
     }
 }
