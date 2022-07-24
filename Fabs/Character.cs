@@ -74,6 +74,11 @@ public class Character : KinematicBody2D
             CollisionLayer |= (uint)(1 << 5);
             CollisionMask |= (uint)(1 << 5);
         }
+
+        if (IsInGroup("Doppel") && (!shroom.Red && !shroom.Green && !shroom.Blue))
+        {
+            QueueFree();
+        }
     }
 
     public override void _PhysicsProcess(float delta)
@@ -96,25 +101,23 @@ public class Character : KinematicBody2D
 
     public void StateChange(bool state, ColorCode color)
     {
-        var material = GetNode<Sprite>("Sprite").Material as ShaderMaterial;
+        if (IsInGroup("Doppel"))
+        {
+            var material = GetNode<Sprite>("Sprite").Material as ShaderMaterial;
 
-        // if (state)
-        // {
-        //     int bit = 1 << (int)color;
-        //     CollisionLayer |= (uint)bit;
-        //     CollisionMask |= (uint)bit;
+            material.SetShaderParam(color.ToString().ToLower(), state);
 
-        //     GD.Print("Toggle on: " + Name + " " + CollisionLayer);
-        // }
-        // else
-        // {
-        //     int bit = ~(1 << (int)color);
-        //     CollisionLayer &= (uint)bit;
-        //     CollisionMask &= (uint)bit;
+            var _visible = (bool)material.GetShaderParam("red") || (bool)material.GetShaderParam("green") || (bool)material.GetShaderParam("blue");
 
-        // }
+            if (!_visible)
+                QueueFree();
 
-        material.SetShaderParam(color.ToString().ToLower(), state);
+        }
+    }
+
+    public void Ded()
+    {
+        GD.Print("Achieved");
     }
 
 

@@ -628,6 +628,7 @@ Blue = true
 
 [node name="SceneChangeTrigger" parent="." index="14" instance=ExtResource( 5 )]
 position = Vector2( 600, 169 )
+ScenePath = "res://Fabs/Eyemush.tscn"
 
 [node name="CollisionShape2D" parent="SceneChangeTrigger" index="0"]
 position = Vector2( 0, -1 )

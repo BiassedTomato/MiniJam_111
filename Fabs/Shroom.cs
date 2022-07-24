@@ -40,8 +40,8 @@ public class Shroom : Sprite
             (body as Character).Shroom(this);
             QueueFree();
         }
-        // else if (body.IsInGroup("Doppel"))
-        //     (body as Character).Shroom(this);
+        else if (body.IsInGroup("Doppel"))
+            (body as Character).Shroom(this);
     }
 
 

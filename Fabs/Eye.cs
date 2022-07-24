@@ -71,7 +71,12 @@ public class Eye : KinematicBody2D
     {
         if (body.IsInGroup("Character") || body.IsInGroup("Doppel"))
         {
-            Toggle();
+            var k=body as KinematicBody2D;
+
+            var bit = (1 << (int)Color);
+
+            if ((k.CollisionLayer & (uint)bit) >= (int)Color)
+                Toggle();
         }
     }
 }
