@@ -13,6 +13,9 @@ public class Eye : KinematicBody2D
 
         (GetNode<Sprite>("Sprite").Material as ShaderMaterial)
         .SetShaderParam(Color.ToString().ToLower(), true);
+
+        if (!IsInGroup(Color.ToString()))
+            AddToGroup(Color.ToString());
     }
 
     bool _open = true;
@@ -41,12 +44,11 @@ public class Eye : KinematicBody2D
     public delegate void OpenChanged(bool open);
 
     [Export]
-    public ColorCode Color;
+    public ColorCode Color=ColorCode.Red;
 
     public void Toggle()
     {
         EmitSignal("OpenChanged", Open);
-        GD.Print(Color.ToString());
         GetTree().CallGroup(Color.ToString(), "StateChange", !Open, Color);
 
     }
@@ -67,7 +69,7 @@ public class Eye : KinematicBody2D
 
     public void BodyEntered(Node body)
     {
-        if (body.IsInGroup("Character"))
+        if (body.IsInGroup("Character") || body.IsInGroup("Doppel"))
         {
             Toggle();
         }

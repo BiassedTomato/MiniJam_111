@@ -21,7 +21,7 @@
 
 [sub_resource type="Animation" id=4]
 resource_name = "AnonSpeech"
-length = 7.0
+length = 7.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("../AnonSpeech:percent_visible")
 tracks/0/interp = 1
@@ -54,6 +54,18 @@ tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../../Spacebar2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 7.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -97,6 +109,30 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../../Spacebar:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 6.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -221,6 +257,19 @@ margin_right = 85.0
 margin_bottom = 10.0
 custom_fonts/normal_font = ExtResource( 3 )
 text = "SKIP"
+
+[node name="Spacebar2" parent="." instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 302, 306 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Spacebar2"]
+margin_left = -21.0
+margin_top = 18.0
+margin_right = 31.0
+margin_bottom = 37.0
+custom_fonts/normal_font = ExtResource( 3 )
+text = "BEGIN
+"
 
 [node name="F" parent="." instance=ExtResource( 10 )]
 position = Vector2( 553, 296 )

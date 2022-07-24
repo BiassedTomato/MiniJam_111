@@ -10,8 +10,5 @@ public class ColorfulControl : NinePatchRect
 
         material.SetShaderParam(color.ToString().ToLower(), state);
 
-        GD.Print("Toggle: " + state + " " + Name);
-
-
     }
 }

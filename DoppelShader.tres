@@ -1,0 +1,33 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform bool red;
+uniform bool green;
+uniform bool blue;
+
+void fragment()
+{
+	if(!red&&!green&&!blue)
+	{
+		COLOR=vec4(0f,0f,0f,0f);
+		
+		return;
+	}
+	
+	vec4 pix=texture(TEXTURE,UV);
+	
+	vec4 final=vec4(0f,0f,0f,pix.a);
+	
+	if(red)
+		final.r=1f;
+	if(green)
+		final.g=1f;
+	if(blue)
+		final.b=1f;
+	
+	
+	COLOR=final;
+}"

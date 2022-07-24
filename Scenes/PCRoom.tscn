@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://ColorManager.cs" type="Script" id=1]
 [ext_resource path="res://Fabs/ColorfulBlock.tscn" type="PackedScene" id=2]
@@ -11,57 +11,8 @@
 [ext_resource path="res://Content/Fonts/bmp8x8.fnt" type="BitmapFont" id=9]
 [ext_resource path="res://Clicker.tres" type="Shader" id=10]
 [ext_resource path="res://crt_shader.tres" type="Shader" id=11]
-[ext_resource path="res://Fabs/ColorfulControl.cs" type="Script" id=12]
-[ext_resource path="res://Eyerim.png" type="Texture" id=13]
 [ext_resource path="res://white8x8.fnt" type="BitmapFont" id=14]
-
-[sub_resource type="Shader" id=1]
-resource_local_to_scene = true
-code = "shader_type canvas_item;
-
-uniform bool red;
-uniform bool green;
-uniform bool blue;
-
-uniform bool alpha;
-
-void fragment()
-{
-	float rv=0f;
-	float gv=0f;
-	float bv=0f;
-	
-	float av=0f;
-	
-	if(!red)
-		rv=0.85f;
-	if(!green)
-		gv=0.85f;
-	if(!blue)
-		bv=0.85f;
-		
-	if(!alpha)
-		av=0.85f;
-		
-		vec4 pix=texture(TEXTURE,UV);
-		
-	if(!green&&!red&&!blue)
-	{
-		COLOR=vec4(0f,0f,0f,0f);
-	}
-	else
-		COLOR=vec4(max(pix.r-rv,0.15f),max(pix.g-gv,0.15f),max(pix.b-bv,0.15f),pix.a);
-	
-	
-}"
-
-[sub_resource type="ShaderMaterial" id=2]
-resource_local_to_scene = true
-shader = SubResource( 1 )
-shader_param/red = false
-shader_param/green = false
-shader_param/blue = false
-shader_param/alpha = false
+[ext_resource path="res://ShroomShader.tres" type="Shader" id=15]
 
 [sub_resource type="ShaderMaterial" id=16]
 shader = ExtResource( 11 )
@@ -88,6 +39,13 @@ shader_param/red = true
 shader_param/green = true
 shader_param/blue = true
 shader_param/alpha = null
+
+[sub_resource type="ShaderMaterial" id=20]
+resource_local_to_scene = true
+shader = ExtResource( 15 )
+shader_param/red = false
+shader_param/green = false
+shader_param/blue = false
 
 [sub_resource type="Shader" id=17]
 resource_local_to_scene = true
@@ -329,6 +287,46 @@ shader_param/green = false
 shader_param/blue = true
 shader_param/alpha = false
 
+[sub_resource type="Shader" id=1]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform bool red;
+uniform bool green;
+uniform bool blue;
+
+uniform bool alpha;
+
+void fragment()
+{
+	float rv=0f;
+	float gv=0f;
+	float bv=0f;
+	
+	float av=0f;
+	
+	if(!red)
+		rv=0.85f;
+	if(!green)
+		gv=0.85f;
+	if(!blue)
+		bv=0.85f;
+		
+	if(!alpha)
+		av=0.85f;
+		
+		vec4 pix=texture(TEXTURE,UV);
+		
+	if(!green&&!red&&!blue)
+	{
+		COLOR=vec4(0f,0f,0f,0f);
+	}
+	else
+		COLOR=vec4(max(pix.r-rv,0.15f),max(pix.g-gv,0.15f),max(pix.b-bv,0.15f),pix.a);
+	
+	
+}"
+
 [sub_resource type="ShaderMaterial" id=13]
 resource_local_to_scene = true
 shader = SubResource( 1 )
@@ -400,19 +398,16 @@ DefaultBlueEnabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer" groups=["Blue", "Green", "Red"]]
-visible = false
-material = SubResource( 2 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 13 )
-script = ExtResource( 12 )
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = SubResource( 16 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 1, 1, 1, 0 )
+[node name="Hint" type="RichTextLabel" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -112.0
+margin_top = 5.0
+margin_right = 109.0
+margin_bottom = 21.0
+custom_fonts/normal_font = ExtResource( 14 )
+bbcode_text = "I should kick this red eye."
+text = "I should kick this red eye."
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 anchor_left = 0.5
@@ -427,16 +422,11 @@ size_flags_vertical = 3
 custom_fonts/normal_font = ExtResource( 9 )
 text = "TIME TO GO OUTSIDE"
 
-[node name="Hint" type="RichTextLabel" parent="CanvasLayer"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -110.0
-margin_top = 12.0
-margin_right = 111.0
-margin_bottom = 28.0
-custom_fonts/normal_font = ExtResource( 14 )
-bbcode_text = "I should kick this red eye."
-text = "I should kick this red eye."
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource( 16 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0 )
 
 [node name="Bounds" type="TileMap" parent="."]
 material = SubResource( 3 )
@@ -449,6 +439,9 @@ tile_data = PoolIntArray( 65537, 0, 0, 65538, 0, 1, 65539, 0, 1, 65540, 0, 1, 65
 
 [node name="Character" parent="." instance=ExtResource( 6 )]
 position = Vector2( 210, 81 )
+
+[node name="Sprite" parent="Character" index="0"]
+material = SubResource( 20 )
 
 [node name="RemoteTransform2D" parent="Character" index="2"]
 remote_path = NodePath("../../Camera2D")
@@ -494,7 +487,6 @@ shape = SubResource( 18 )
 
 [node name="Eye" parent="." groups=["Red"] instance=ExtResource( 4 )]
 position = Vector2( 346, 215 )
-Color = 3
 
 [node name="SceneChangeTrigger" parent="." instance=ExtResource( 5 )]
 position = Vector2( 208, 284 )

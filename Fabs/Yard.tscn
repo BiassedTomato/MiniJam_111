@@ -1,6 +1,5 @@
 [gd_scene load_steps=30 format=2]
 
-[ext_resource path="res://Fabs/Colorful.tres" type="Material" id=1]
 [ext_resource path="res://ColorManager.cs" type="Script" id=2]
 [ext_resource path="res://Fabs/Character.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Fabs/ColorfulTileMap.tscn" type="PackedScene" id=4]
@@ -8,11 +7,11 @@
 [ext_resource path="res://Content/Fonts/bmp8x8.fnt" type="BitmapFont" id=6]
 [ext_resource path="res://Clicker.tres" type="Shader" id=7]
 [ext_resource path="res://crt_shader.tres" type="Shader" id=8]
-[ext_resource path="res://Fabs/ColorfulControl.cs" type="Script" id=9]
-[ext_resource path="res://Eyerim.png" type="Texture" id=10]
 [ext_resource path="res://Fabs/ColorfulBlock.tscn" type="PackedScene" id=11]
 [ext_resource path="res://LockedDoor.png" type="Texture" id=12]
 [ext_resource path="res://SceneChangeTrigger.tscn" type="PackedScene" id=13]
+[ext_resource path="res://ShroomShader.tres" type="Shader" id=14]
+[ext_resource path="res://Fabs/Eye.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 8 )
@@ -39,6 +38,13 @@ shader_param/red = true
 shader_param/green = true
 shader_param/blue = true
 shader_param/alpha = null
+
+[sub_resource type="ShaderMaterial" id=19]
+resource_local_to_scene = true
+shader = ExtResource( 14 )
+shader_param/red = false
+shader_param/green = false
+shader_param/blue = false
 
 [sub_resource type="Shader" id=4]
 resource_local_to_scene = true
@@ -338,27 +344,15 @@ shader_param/alpha = false
 
 [sub_resource type="RectangleShape2D" id=18]
 resource_local_to_scene = true
-extents = Vector2( 8, 134 )
+extents = Vector2( 17, 7 )
 
 [node name="Base" type="Node2D"]
 script = ExtResource( 2 )
+DefaultRedEnabled = true
+DefaultGreenEnabled = true
+DefaultBlueEnabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer" groups=["Blue", "Green", "Red"]]
-visible = false
-material = ExtResource( 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 10 )
-script = ExtResource( 9 )
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
-material = SubResource( 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 1, 1, 1, 0 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 anchor_left = 0.5
@@ -373,15 +367,11 @@ size_flags_vertical = 3
 custom_fonts/normal_font = ExtResource( 6 )
 text = "AHH, FRESH AIR"
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource( 1 )
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -110.0
-margin_top = 30.0
-margin_right = 25.0
-margin_bottom = 73.0
+color = Color( 1, 1, 1, 0 )
 
 [node name="Bounds" type="TileMap" parent="."]
 material = SubResource( 3 )
@@ -395,6 +385,9 @@ tile_data = PoolIntArray( -196608, 4, 0, -196607, 4, 0, -196606, 4, 0, -196605, 
 [node name="Character" parent="." instance=ExtResource( 3 )]
 position = Vector2( 204, 128 )
 
+[node name="Sprite" parent="Character" index="0"]
+material = SubResource( 19 )
+
 [node name="RemoteTransform2D" parent="Character" index="2"]
 remote_path = NodePath("../../Camera2D")
 
@@ -406,6 +399,7 @@ drag_margin_v_enabled = true
 
 [node name="RedWalls" parent="." groups=["Red"] instance=ExtResource( 4 )]
 material = SubResource( 5 )
+tile_data = PoolIntArray( 65541, 2, 0, 65542, 2, 1, 65543, 2, 1, 65544, 2, 1, 65545, 2, 1, 65546, 2, 1, 65547, 2, 1, 65548, 2, 1, 65549, 2, 2, 65552, 2, 0, 65553, 2, 1, 65554, 2, 1, 65555, 2, 1, 65556, 2, 1, 65557, 2, 1, 65558, 2, 1, 65559, 2, 1, 65560, 2, 1, 65561, 2, 1, 65562, 2, 1, 65563, 2, 2, 131077, 2, 131072, 131078, 2, 131073, 131079, 2, 131073, 131080, 2, 131073, 131081, 2, 131073, 131082, 2, 131073, 131083, 2, 131073, 131084, 2, 131073, 131085, 2, 131074, 131088, 2, 131072, 131089, 2, 131073, 131090, 2, 131073, 131091, 2, 131073, 131092, 2, 131073, 131093, 2, 131073, 131094, 2, 131073, 131095, 2, 131073, 131096, 2, 131073, 131097, 2, 131073, 131098, 2, 196609, 131099, 2, 65538, 196634, 2, 65536, 196635, 2, 65538, 262170, 2, 65536, 262171, 2, 65538, 327706, 2, 65536, 327707, 2, 65538, 393242, 2, 65536, 393243, 2, 65538, 458778, 2, 131072, 458779, 2, 131074, 655386, 2, 0, 655387, 2, 2, 720922, 2, 65536, 720923, 2, 65538, 786458, 2, 65536, 786459, 2, 65538, 851994, 2, 65536, 851995, 2, 65538, 917530, 2, 65536, 917531, 2, 65538, 983045, 2, 0, 983046, 2, 1, 983047, 2, 1, 983048, 2, 1, 983049, 2, 1, 983050, 2, 1, 983051, 2, 1, 983052, 2, 1, 983053, 2, 2, 983056, 2, 0, 983057, 2, 1, 983058, 2, 1, 983059, 2, 1, 983060, 2, 1, 983061, 2, 1, 983062, 2, 1, 983063, 2, 1, 983064, 2, 1, 983065, 2, 1, 983066, 2, 262145, 983067, 2, 65538, 1048581, 2, 131072, 1048582, 2, 131073, 1048583, 2, 131073, 1048584, 2, 131073, 1048585, 2, 131073, 1048586, 2, 131073, 1048587, 2, 131073, 1048588, 2, 131073, 1048589, 2, 131074, 1048592, 2, 131072, 1048593, 2, 131073, 1048594, 2, 131073, 1048595, 2, 131073, 1048596, 2, 131073, 1048597, 2, 131073, 1048598, 2, 131073, 1048599, 2, 131073, 1048600, 2, 131073, 1048601, 2, 131073, 1048602, 2, 131073, 1048603, 2, 131074 )
 
 [node name="RedPaths" parent="." groups=["Red"] instance=ExtResource( 4 )]
 material = SubResource( 7 )
@@ -413,6 +407,7 @@ Walkable = true
 
 [node name="GreenWalls" parent="." groups=["Green"] instance=ExtResource( 4 )]
 material = SubResource( 9 )
+tile_data = PoolIntArray( 524314, 2, 0, 524315, 2, 2, 589850, 2, 131072, 589851, 2, 131074 )
 
 [node name="GreenPaths" parent="." groups=["Green"] instance=ExtResource( 4 )]
 material = SubResource( 11 )
@@ -420,6 +415,7 @@ Walkable = true
 
 [node name="BlueWalls" parent="." groups=["Blue"] instance=ExtResource( 4 )]
 material = SubResource( 13 )
+tile_data = PoolIntArray( 983054, 2, 0, 983055, 2, 2, 1048590, 2, 131072, 1048591, 2, 131074 )
 
 [node name="BluePaths" parent="." groups=["Blue"] instance=ExtResource( 4 )]
 material = SubResource( 15 )
@@ -434,12 +430,23 @@ rotation = 3.14159
 texture = ExtResource( 12 )
 
 [node name="SceneChangeTrigger" parent="." instance=ExtResource( 13 )]
-position = Vector2( 496, 144 )
-ScenePath = "res://Fabs/P1.tscn"
+position = Vector2( 241, 28 )
+ScenePath = "res://Fabs/Multicolor.tscn"
 
 [node name="CollisionShape2D" parent="SceneChangeTrigger" index="0"]
-position = Vector2( 0, 7 )
+position = Vector2( -1, -4 )
 shape = SubResource( 18 )
+
+[node name="Eye" parent="." instance=ExtResource( 15 )]
+position = Vector2( 86, 288 )
+
+[node name="Eye2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 140, 288 )
+Color = 4
+
+[node name="Eye3" parent="." instance=ExtResource( 15 )]
+position = Vector2( 194, 288 )
+Color = 5
 
 [editable path="Character"]
 [editable path="Door"]

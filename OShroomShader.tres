@@ -1,0 +1,64 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform bool red;
+uniform bool green;
+uniform bool blue;
+
+uniform bool alpha;
+
+float nrand(vec2 co){
+    return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
+}
+
+void fragment()
+{
+	float rv=0f;
+	float gv=0f;
+	float bv=0f;
+	
+	float av=0f;
+	
+	vec4 pix=texture(TEXTURE,UV);
+	
+	if(!red&&!green&&!blue)
+	{
+		if(pix.a>0f)
+		{
+			
+		float c=nrand(vec2(TIME+UV.x,TIME+UV.y));
+		COLOR=vec4(c,c,c,1f);
+		}
+		else
+		{
+			COLOR=vec4(0f,0f,0f,0f);
+		}
+		
+	}
+	else{
+		
+	
+	if(!red)
+		rv=0.85f;
+	if(!green)
+		gv=0.85f;
+	if(!blue)
+		bv=0.85f;
+		
+	if(!alpha)
+		av=0.85f;
+		
+		
+	if(!green&&!red&&!blue)
+	{
+		COLOR=vec4(0f,0f,0f,0f);
+	}
+	else
+		COLOR=vec4(max(pix.r-rv,0.15f),max(pix.g-gv,0.15f),max(pix.b-bv,0.15f),pix.a);
+	
+	}
+	
+} "

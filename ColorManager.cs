@@ -24,10 +24,6 @@ public class ColorManager : Node2D
     ColorRect _screenShader;
     public override void _Ready()
     {
-
-        GD.Print(GetTree().GetNodesInGroup("Blue").Count);
-
-
         if (DefaultRedEnabled)
             GetTree().CallGroup("Red", "StateChange", true, ColorCode.Red);
         else
