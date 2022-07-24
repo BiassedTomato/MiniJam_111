@@ -26,10 +26,11 @@ public class ColorListener : Node2D
     public bool NeedsBlue;
 
 
-    bool red, green, blue;
+    bool? red=null, green=null, blue=null;
 
     public void StateChange(bool state, ColorCode color)
     {
+        
         if (color == ColorCode.Red)
             red = state;
         else if (color == ColorCode.Green)
@@ -37,10 +38,12 @@ public class ColorListener : Node2D
         else if (color == ColorCode.Blue)
             blue = state;
 
-        if(!(NeedsRed^red)&&!(NeedsGreen^green)&&!(NeedsBlue^blue))
-        {
-            EmitSignal("ColorStateSet");
-        }
+        if (red != null && green != null && !blue != null)
+            if (NeedsRed == red && NeedsGreen == green && NeedsBlue == blue)
+            {
+                GD.Print("ass");
+                EmitSignal("ColorStateSet");
+            }
 
     }
 }

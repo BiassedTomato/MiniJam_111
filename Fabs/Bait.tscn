@@ -6,7 +6,7 @@
 [ext_resource path="res://Fabs/ColorfulTileMap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://SceneChangeTrigger.tscn" type="PackedScene" id=5]
 
-[sub_resource type="ShaderMaterial" id=5]
+[sub_resource type="ShaderMaterial" id=23]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/red = false
@@ -580,8 +580,8 @@ tile_data = PoolIntArray( 131075, 5, 65536, 131076, 5, 65537, 131077, 5, 65537, 
 [node name="Character" parent="." index="2"]
 position = Vector2( 107, 262 )
 
-[node name="Sprite" parent="Character" index="0"]
-material = SubResource( 5 )
+[node name="AnimatedSprite" parent="Character" index="2"]
+material = SubResource( 23 )
 
 [node name="Camera2D" parent="." index="3"]
 position = Vector2( 107, 262 )

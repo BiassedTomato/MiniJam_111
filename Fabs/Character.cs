@@ -14,7 +14,7 @@ public class Character : KinematicBody2D
 
     public void Shroom(Shroom shroom)
     {
-        var material = GetNode<Sprite>("Sprite").Material as ShaderMaterial;
+        var material = GetNode<AnimatedSprite>("AnimatedSprite").Material as ShaderMaterial;
 
 
 
@@ -95,15 +95,34 @@ public class Character : KinematicBody2D
         if (Input.IsActionPressed("down"))
             direction.y += 1;
 
+        var an = GetNode<AnimatedSprite>("AnimatedSprite");
+
+
+
+
         if (direction != Vector2.Zero)
+        {
+
+            an.Play("walk");
+
+            if (direction.x < 0)
+                an.FlipH = true;
+            else
+                an.FlipH = false;
             MoveAndSlide(direction.Normalized() * Speed * 60);
+        }
+        else
+        {
+            an.Playing = false;
+            an.Frame = 0;
+        }
     }
 
     public void StateChange(bool state, ColorCode color)
     {
         if (IsInGroup("Doppel"))
         {
-            var material = GetNode<Sprite>("Sprite").Material as ShaderMaterial;
+            var material = GetNode<AnimatedSprite>("AnimatedSprite").Material as ShaderMaterial;
 
             material.SetShaderParam(color.ToString().ToLower(), state);
 

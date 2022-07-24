@@ -467,7 +467,7 @@ tile_data = PoolIntArray( 0, 5, 65536, 1, 5, 65537, 2, 5, 65537, 3, 5, 65537, 4,
 [node name="Character" parent="." index="2"]
 position = Vector2( 131, 313 )
 
-[node name="Sprite" parent="Character" index="0"]
+[node name="AnimatedSprite" parent="Character" index="2"]
 material = SubResource( 30 )
 
 [node name="Door" parent="." index="3" groups=["Blue", "Green", "Red"] instance=ExtResource( 5 )]

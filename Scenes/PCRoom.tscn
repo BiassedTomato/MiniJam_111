@@ -440,11 +440,11 @@ tile_data = PoolIntArray( 65537, 0, 0, 65538, 0, 1, 65539, 0, 1, 65540, 0, 1, 65
 [node name="Character" parent="." instance=ExtResource( 6 )]
 position = Vector2( 210, 81 )
 
-[node name="Sprite" parent="Character" index="0"]
-material = SubResource( 20 )
-
-[node name="RemoteTransform2D" parent="Character" index="2"]
+[node name="RemoteTransform2D" parent="Character" index="1"]
 remote_path = NodePath("../../Camera2D")
+
+[node name="AnimatedSprite" parent="Character" index="2"]
+material = SubResource( 20 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 210, 81 )
