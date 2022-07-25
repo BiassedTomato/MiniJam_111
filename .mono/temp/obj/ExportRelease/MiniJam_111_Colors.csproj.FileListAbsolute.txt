@@ -1,0 +1,9 @@
+C:\Users\Admin\Projects\GodotProjects\MiniJam_111_Colors\.mono\temp\bin\ExportRelease\MiniJam_111_Colors.dll
+C:\Users\Admin\Projects\GodotProjects\MiniJam_111_Colors\.mono\temp\bin\ExportRelease\MiniJam_111_Colors.pdb
+C:\Users\Admin\Projects\GodotProjects\MiniJam_111_Colors\.mono\temp\obj\ExportRelease\MiniJam_111_Colors.csproj.AssemblyReference.cache
+C:\Users\Admin\Projects\GodotProjects\MiniJam_111_Colors\.mono\temp\obj\ExportRelease\MiniJam_111_Colors.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Projects\GodotProjects\MiniJam_111_Colors\.mono\temp\obj\ExportRelease\MiniJam_111_Colors.AssemblyInfoInputs.cache
+C:\Users\Admin\Projects\GodotProjects\MiniJam_111_Colors\.mono\temp\obj\ExportRelease\MiniJam_111_Colors.AssemblyInfo.cs
+C:\Users\Admin\Projects\GodotProjects\MiniJam_111_Colors\.mono\temp\obj\ExportRelease\MiniJam_111_Colors.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Projects\GodotProjects\MiniJam_111_Colors\.mono\temp\obj\ExportRelease\MiniJam_111_Colors.dll
+C:\Users\Admin\Projects\GodotProjects\MiniJam_111_Colors\.mono\temp\obj\ExportRelease\MiniJam_111_Colors.pdb

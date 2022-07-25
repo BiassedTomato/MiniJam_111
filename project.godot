@@ -12,6 +12,7 @@ config_version=4
 
 config/name="MiniJam_111_Colors"
 run/main_scene="res://Fabs/Intro.tscn"
+boot_splash/image="res://Shroom.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.png"
@@ -24,6 +25,7 @@ GlobalSound="*res://GlobalSound.tscn"
 
 window/size/width=640
 window/size/height=360
+window/size/fullscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

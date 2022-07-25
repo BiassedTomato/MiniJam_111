@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://ColorManager.cs" type="Script" id=1]
 [ext_resource path="res://Fabs/ColorfulBlock.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Fabs/Character.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Fabs/ColorfulTileMap.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Fabs/Tileset.tres" type="TileSet" id=8]
-[ext_resource path="res://Content/Fonts/bmp8x8.fnt" type="BitmapFont" id=9]
 [ext_resource path="res://Clicker.tres" type="Shader" id=10]
 [ext_resource path="res://crt_shader.tres" type="Shader" id=11]
 [ext_resource path="res://white8x8.fnt" type="BitmapFont" id=14]
@@ -419,7 +418,7 @@ margin_top = -13.0
 margin_right = 80.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/normal_font = ExtResource( 9 )
+custom_fonts/normal_font = ExtResource( 14 )
 text = "TIME TO GO OUTSIDE"
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]

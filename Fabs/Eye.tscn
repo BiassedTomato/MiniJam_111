@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Eye.png" type="Texture" id=1]
 [ext_resource path="res://Clicker.tres" type="Shader" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Pupil.png" type="Texture" id=4]
 [ext_resource path="res://ClosedEye.png" type="Texture" id=5]
 [ext_resource path="res://SFX/eyehit.wav" type="AudioStream" id=6]
+[ext_resource path="res://SFX/eyeopen.wav" type="AudioStream" id=7]
 
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
@@ -69,5 +70,8 @@ process_material = SubResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+
+[node name="OpenPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 
 [connection signal="body_entered" from="Area2D" to="." method="BodyEntered"]

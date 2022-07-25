@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
+[ext_resource path="res://Content/Textures/Shadow.png" type="Texture" id=1]
 [ext_resource path="res://Fabs/Character.cs" type="Script" id=2]
 [ext_resource path="res://ShroomMaterial.tres" type="Material" id=3]
 [ext_resource path="res://mc/1.png" type="Texture" id=4]
@@ -33,3 +34,7 @@ position = Vector2( 0, -1 )
 z_index = 1
 frames = SubResource( 2 )
 animation = "walk"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 24 )
+texture = ExtResource( 1 )

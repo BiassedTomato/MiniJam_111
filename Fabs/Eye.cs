@@ -98,6 +98,11 @@ public class Eye : KinematicBody2D
                     GetNode<Particles2D>("Particles2D").Emitting = true;
                     GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
                 }
+                else
+                {
+                    GetNode<AudioStreamPlayer>("OpenPlayer").Play();
+
+                }
 
                 Toggle();
 
